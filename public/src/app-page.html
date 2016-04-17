@@ -3,95 +3,99 @@
         <style>
         :host {
             display: block;
-            --paper-tab-ink: #0D47A1;
+
+            --paper-tab-ink: #5c6bc0;
+            --custom-primary-color: #1565C0;
+            --custom-secondary-color: #1565C0;
+            --custom-primary-text-color: rgba(255,255,255,1);
+            --custom-secondary-text-color: rgba(255,255,255,0.9);
+            --custom-invert-text-color: rgba(255,255,255,0.9);
         }
-        
+
         paper-tabs {
             margin-right: 24px;
-            --paper-tabs-selection-bar-color: #0D47A1;
+            --paper-tabs-selection-bar-color: var(--custom-secondary-color);
             height: 64px;
         }
-        
+
         paper-tab {
-            color: #0D47A1;
+            color: var(--custom-secondary-color);
             font-weight: 500;
         }
-        
+
         app-header {
             background-color: white;
             --app-header-background-rear-layer: {
                 background-color: #FAFAFA;
             }
         }
-        
+
         .gcp-logo {
-            background: url('/images/io-white.png') no-repeat;
             display: inline-block;
-            background-size: contain;
             height: 40px;
             width: 60px;
             transition: opacity 200ms ease-in-out;
             will-change: opacity;
         }
-        
+
         .drawer-text {
             font-size: 14px;
             line-height: 20px;
             color: white;
             font-weight: 500;
         }
-        
+
         paper-toolbar {
-            background: #1565C0;
+            background: var(--custom-primary-color);
             margin-bottom: 8px;
         }
-        
+
         paper-item {
             font-size: 14px;
-            color: #546E7A;
+            color: var(--custom-primary-color);
             font-weight: 500;
             --paper-item-selected-weight: 500;
             --paper-item-selected: {
                 background: #eceff1;
             }
-            ;
         }
-        
+
         #gcp-toolbar {
+            background-size: contain;
             cursor: pointer;
             height: 58px;
             margin-left: 12px;
             vertical-align: middle;
         }
-        
+
         @media screen and (max-width: 840px) {
             paper-tabs {
                 margin-right: 0px;
             }
         }
         </style>
+        <iron-ajax auto url="/data/page_data.json" handle-as="json" last-response="{{handleResponse}}"></iron-ajax>
         <iron-media-query query="(min-width: 840px)" query-matches="{{wide}}"></iron-media-query>
         <app-drawer-layout force-narrow>
             <template is="dom-if" if="{{!wide}}">
                 <app-drawer id="drawer" swipe-open>
                     <paper-toolbar class="tall">
-                        <div class="top gcp-logo" flex></div>
+                        <div class="top gcp-logo" flex style="background: url('{{pagecontents.header.drawer_icon_picture}}') no-repeat; background-size: contain;"></div>
                         <div class="bottom drawer-text">
                             <div>9:00AM, 30 April</div>
                             <div>Asia Pacific University, KL</div>
                         </div>
                     </paper-toolbar>
                     <iron-selector attr-for-selected="id" selected="{{data.page}}">
-                        <paper-item id="" drawer-toggle on-tap="scrollTop">Home</paper-item>
-                        <paper-item id="speaker" drawer-toggle on-tap="scrollTop">Speaker</paper-item>
-                        <paper-item id="agenda" drawer-toggle on-tap="scrollTop">Agenda</paper-item>
-                        <paper-item id="getting" drawer-toggle on-tap="scrollTop">Getting There</paper-item>
-                        <paper-item id="register" drawer-toggle on-tap="scrollTop">Register</paper-item>
+                        <paper-item id="" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.home}}</paper-item>
+                        <paper-item id="speaker" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.speakers}}</paper-item>
+                        <paper-item id="getting" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.getting}}</paper-item>
+                        <paper-item id="register" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.register}}</paper-item>
                     </iron-selector>
                 </app-drawer>
             </template>
             <template is="dom-if" if="{{wide}}">
-                <app-drawer id="drawer"></app-drawer>
+                <app-drawer id="drawer" swipe-open>cat</app-drawer>
             </template>
             <app-header-layout>
                 <app-header reveals effects="waterfall fade-background">
@@ -101,27 +105,28 @@
                         </template>
                         <template is="dom-if" if="{{wide}}">
                             <div on-tap="goHome">
-                                <img src="/images/gcp_next_2016_LP_logo-square.png" id="gcp-toolbar">
+                                <img src="{{pagecontents.header.toolbar_icon_picture}}" id="gcp-toolbar">
                             </div>
                             <div title></div>
                             <paper-tabs attr-for-selected="id" selected="{{data.page}}">
-                                <paper-tab id="speaker" on-tap="scrollTop">SPEAKER</paper-tab>
-                                <paper-tab id="agenda" on-tap="scrollTop">AGENDA</paper-tab>
-                                <paper-tab id="getting" on-tap="scrollTop">GETTING THERE</paper-tab>
-                                <paper-tab id="register" on-tap="scrollTop">REGISTER</paper-tab>
+                                <paper-tab id="" on-tap="scrollTop">{{pagecontents.menu.home}}</paper-tab>
+                                <paper-tab id="speaker" on-tap="scrollTop">{{pagecontents.menu.speakers}}</paper-tab>
+                                <!-- <paper-tab id="agenda" on-tap="scrollTop">{{pagecontents.menu.agenda}}</paper-tab> -->
+                                <paper-tab id="getting" on-tap="scrollTop">{{pagecontents.menu.getting}}</paper-tab>
+                                <paper-tab id="register" on-tap="scrollTop">{{pagecontents.menu.register}}</paper-tab>
                             </paper-tabs>
                         </template>
                     </app-toolbar>
                 </app-header>
                 <div>
-                    <carbon-location route="{{route}}" use-hash-as-path></carbon-location>
+                    <carbon-location route="{{route}}"></carbon-location>
                     <carbon-route route="{{route}}" pattern="/:page" data="{{data}}"></carbon-route>
                     <neon-animated-pages id="neonAnimatedPages" class="flex" attr-for-selected="id" selected="{{data.page}}">
-                        <home-page id=""></home-page>
-                        <speaker-page id="speaker"></speaker-page>
-                        <agenda-page id="agenda"></agenda-page>
-                        <transport-page id="getting"></transport-page>
-                        <register-page id="register"></register-page>
+                        <home-page id="" page-content="{{pagecontents.details}}"></home-page>
+                        <speaker-page page-content="{{pagecontents.speaker}}" id="speaker"></speaker-page>
+                        <!-- <agenda-page id="agenda" page-content="{{pagecontents.agenda}}"></agenda-page> -->
+                        <transport-page id="getting" page-content="{{pagecontents.getting}}"></transport-page>
+                        <register-page id="register" page-content="{{pagecontents.register}}"></register-page>
                     </neon-animated-pages>
                 </div>
             </app-header-layout>
@@ -134,7 +139,6 @@
         properties: {
             route: {
                 type: Object,
-                observer: "changeTitle",
                 notify: true
             },
             data: {
@@ -142,15 +146,19 @@
                 value: {
                     page: '/home/'
                 },
+            },
+            handleResponse: {
+                type: Object,
+                notify: true,
+                observer: '_handleResponse'
             }
+        },
+        _handleResponse: function() {
+            this.pagecontents = this.handleResponse[0];
         },
         ready: function() {
             this.async(function() {
-                if (!this.route.path) {
-                    this.set('route.path', '/');
-                    window.location.hash = "/"
-                }
-                if (this.route.path == "/") {
+                if (!this.route.path && this.route.path == "/") {
                     this.set('route.path', '/');
                     window.location.hash = "/"
                 }
@@ -161,33 +169,17 @@
             this.set('route.path', '/');
             document.body.scrollTop = 0
         },
-        toggleDrawer: function() {
-            this.$.drawer.toggle();
-        },
         scrollTop: function() {
             document.body.scrollTop = 0
-        },
-        changeTitle: function() {
-            if (this.data.page == "getting") {
-                document.title = "Getting There"
-            } else if (this.data.page == "register") {
-                document.title = "Register"
-            } else if (this.data.page == "agenda") {
-                document.title = "Agenda"
-            } else if (this.data.page == "speaker") {
-                document.title = "Speaker"
-            } else if (this.data.page == "") {
-                document.title = "Google Cloud Platform Next Extended 2016 Kuala Lumpur";
-            } else {
-                this.set('route.path', '/');
-            }
         },
 
         attached: function() {
             this.async(function() {
                 document.querySelector('neon-animated-pages').addEventListener('neon-animation-finish', function() {
-                    if (window.location.hash == "#/") {
-                        document.querySelector('app-page').querySelector('google-map').resize();
+                    app = document.querySelector('app-page');
+                    if (app.data.page == "") {
+                        console.log("resize")
+                        app.querySelector('google-map').resize();
                     }
                 });
             });

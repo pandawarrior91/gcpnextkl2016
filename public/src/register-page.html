@@ -4,15 +4,15 @@
         :host {
             display: block;
         }
-        
+
         h1 {
             text-align: center;
             margin-bottom: 36px;
             font-size: 45px;
-            color: #0D47A1;
+            color: var(--custom-primary-color);
             font-weight: 400;
         }
-        
+
         .responsiveIframe {
             position: relative;
             padding-bottom: 550px;
@@ -21,7 +21,7 @@
             max-width: 20%;
             margin: auto;
         }
-        
+
         .responsiveIframe iframe {
             position: absolute;
             top: 0;
@@ -29,14 +29,14 @@
             width: 100%;
             height: 100%;
         }
-        
+
         @media screen and (max-width: 1920px) {
             .responsiveIframe {
                 max-width: 400px;
                 padding-bottom: 500px;
             }
         }
-        
+
         @media screen and (max-width: 840px) {
             h1 {
                 width: 80%;
@@ -49,7 +49,7 @@
                 font-size: 34px;
             }
         }
-        
+
         @media screen and (max-width: 500px) {
             .responsiveIframe {
                 max-width: 100%;
@@ -57,9 +57,9 @@
         }
         </style>
         <div id="registerPage">
-            <h1>Register</h1>
+            <h1>{{pageContent.title}}</h1>
             <div class="responsiveIframe">
-                <iframe frameborder="0" src="https://peatix.com/event/162445/share/widget?z=1&t=1" id="peatixFrame"></iframe>
+                <iframe frameborder="0" src="{{pageContent.peatix_iframe_url}}" id="peatixFrame"></iframe>
             </div>
             <footer-page></footer-page>
         </div>
@@ -73,6 +73,7 @@
             Polymer.NeonAnimationRunnerBehavior
         ],
         properties: {
+            pageContent: Object,
             animationConfig: {
                 value: function() {
                     return {

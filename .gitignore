@@ -15,3 +15,5 @@ _site
 _data/versions
 .bundle
 summit/dist
+deploy.bat
+serve.bat

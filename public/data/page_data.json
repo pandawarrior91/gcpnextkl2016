@@ -1,0 +1,83 @@
+[{
+    "header": {
+        "toolbar_icon_picture": "/data/images/toolbar_icon_picture.png",
+        "drawer_icon_picture": "/data/images/drawer_icon_picture.png"
+    },
+    "menu": {
+        "home": "HOME",
+        "speakers": "SPEAKERS",
+        "agenda": "AGENDA",
+        "getting": "GETTING THERE",
+        "register": "REGISTER"
+    },
+    "movil-menu": {
+        "home": "Home",
+        "speakers": "Speakers",
+        "agenda": "Agenda",
+        "getting": "Getting there",
+        "register": "Register"
+    },
+
+    "details": {
+        "time": "9:00AM - 5:00PM, 30 April 2016",
+        "location": "Asia Pacific University, Kuala Lumpur, Malaysia",
+        "description": "Google Cloud Platform Next 2016 Kuala Lumpur is a full day event of workshops and talks centered around the latest developments in cloud technology. There will be talks and workshops conduct by Google Developer Experts and industry experts.",
+        "event_cover_picture_desktop": "/data/images/event_cover_picture_desktop.png",
+        "event_cover_picture_mobile": "/data/images/event_cover_picture_mobile.png",
+        "venue_map_latitude": "3.0469207",
+        "venue_map_longitude": "101.6946895",
+        "venue_pointer_latitude": "3.0469207",
+        "venue_pointer_longitude": "101.6946895",
+        "peatix_event_url": "https://gcpnextkl2016.peatix.com",
+        "get-ticket": "Get your ticket now on Peatix",
+        "button-get-ticket": "Book now",
+        "organized-by": "Organized by",
+        "made-possible-with": "Made possible with",
+        "sponsor": "/data/images/gdgkl.png",
+        "co-sponsor": [{
+            "sponsor_image": "/data/images/big_g.png"
+        }, {
+            "sponsor_image": "/data/images/apu_sd.png"
+        }]
+    },
+    "speaker": {
+        "title": "Speakers"
+    },
+    "agenda": {
+        "title": "Agenda",
+        "tochange": "* Subject to change"
+    },
+    "getting": {
+        "title": "Getting there",
+        "event_name": "Google Cloud Platform Next Extended 2016 Kuala Lumpur",
+        "getting_description": "We are hosting Google Cloud Platform Next Extended 2016 Kuala Lumpur at the Asia Pacific University, Kuala Lumpur.",
+        "venue_name": "Asia Pacific University",
+        "venue_photo": "https://placehold.it/1280x640/2196F3/eeeeee?text=%20",
+        "getting-to": "Getting to",
+        "there-are-ways": "There are few ways to come to",
+        "getting_method": [{
+            "method": "LRT",
+            "method_description": "To be announced "
+        }, {
+            "method": "Rapid KL",
+            "method_description": "To be announced "
+        }, {
+            "method": "Taxi",
+            "method_description": "To be announced "
+        }, {
+            "method": "Driving",
+            "method_description": "To be announced "
+        }]
+    },
+    "register": {
+        "title": "Register",
+        "peatix_iframe_url": "https://peatix.com/event/162445/share/widget?z=1&t=1"
+    },
+    "footer": {
+        "organization_image": "/data/images/gdgkl.png",
+        "organization_url": "https://www.facebook.com/GDGKualaLumpur/",
+        "organization_name": "GDG Kuala Lumpur",
+        "author_name": "Henry Lim",
+        "author_url": "https://limhenry.xyz"
+    }
+}]

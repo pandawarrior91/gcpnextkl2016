@@ -22,7 +22,10 @@
             width: 300px;
             margin: 12px 6px;
             line-height: 24px;
-            background: rgba(236, 239, 241, 0.1)
+            background: rgba(236, 239, 241, 0.1);
+            --paper-card-header-image: {
+                height: 250px;
+            };
         }
 
         paper-card.card-content {
@@ -55,7 +58,9 @@
         #speaker-post {
             margin: 0;
             line-height: 24px;
-            font-weight: 300;
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(0,0,0,0.8);
         }
 
         #speaker-desc {
@@ -107,6 +112,11 @@
             }
             #speaker-card {
                 max-width: 632px;
+                padding: 8px;
+                margin: 0 auto;
+            }
+            paper-card{
+                margin: 12px 8px;
             }
         }
 
@@ -115,8 +125,18 @@
                 margin-top: 48px;
                 margin-bottom: 24px;
                 font-size: 36px;
-                padding-left: 10px;
+                padding-left: 24px;
                 font-size: 34px;
+            }
+        }
+
+        @media screen and (max-width: 667px) {
+            #speaker-card{
+                max-width: 616px;
+                padding: 4px;
+            }
+            paper-card{
+                margin: 12px 4px;
             }
         }
 
@@ -135,6 +155,10 @@
             paper-card {
                 width: 100%;
                 margin: 0;
+                --paper-card-header-image: {
+                    width: 100%;
+                    height: auto;
+                };
             }
             #speaker-post {
                 display: inline-block;
@@ -153,7 +177,7 @@
                                 <div class="card-content">
                                     <div id="speaker-short">
                                         <h3 id="speaker-name">[[item.name]]</h3>
-                                        <h3 id="speaker-post"><i>[[item.post]]</i></h3>
+                                        <h3 id="speaker-post">[[item.post]]</h3>
                                         <iron-icon icon="icons:arrow-drop-down" on-click="toggleCollapse"></iron-icon>
                                     </div>
                                     <iron-collapse id="collapse">

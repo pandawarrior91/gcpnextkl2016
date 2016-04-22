@@ -52,21 +52,19 @@
         "event_name": "Google Cloud Platform Next Extended 2016 Kuala Lumpur",
         "getting_description": "We are hosting Google Cloud Platform Next Extended 2016 Kuala Lumpur at the Asia Pacific University, Kuala Lumpur.",
         "venue_name": "Asia Pacific University",
-        "venue_photo": "https://placehold.it/1280x640/2196F3/eeeeee?text=%20",
+        "venue_photo": "/data/images/apu.jpg",
         "getting-to": "Getting to",
         "there-are-ways": "There are few ways to come to",
         "getting_method": [{
             "method": "LRT",
-            "method_description": "To be announced "
-        }, {
-            "method": "Rapid KL",
-            "method_description": "To be announced "
+            "method_description": "If you are coming to APU by LRT, get off at the Bukit Jalil LRT station on the Sri Petaling Line. From the Bukit Jalil LRT station, it is a short cab ride to APU’s main campus (approx. RM 5 – RM 7)"
         }, {
             "method": "Taxi",
-            "method_description": "To be announced "
+            "method_description": "If you are coming to APU by taxi, just inform the taxi driver that you need to be taken to 'Technology Park Malaysia' in Bukit Jalil. Once you are inside Technology Park, you will see boards that will point you to APU’s main campus. If you are using Grabcar simply search for, 'APIIT TPM'"
         }, {
             "method": "Driving",
-            "method_description": "To be announced "
+            "method_description": "If you are driving please find the location below:",
+            "link": "https://goo.gl/maps/Jn9fu6B3ssu"
         }]
     },
     "register": {

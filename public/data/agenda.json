@@ -1,7 +1,103 @@
-[
-{"start": "10:45PM, 18 May", "end": "11:00PM", "name": "Doors Open", "place":"FCI Lecture Hall"},
-{"start": "11:00PM", "end": "11:15PM", "name": "Registration &amp; Check In", "place":"FCI Lecture Hall"},
-{"start": "11:15PM", "end": "12:00AM", "name": "Pizza Party &amp; Network", "place":"FCI Lecture Hall"},
-{"start": "12:00AM, 19 May *", "end": "3:00AM", "name": "Keynote Live Stream", "place":"FCI Lecture Hall"},
-{"start": "3:00AM *", "end": "3:30AM" , "name": "Closing and Depature", "place":"FCI Lecture Hall"}
-]
+[{
+    "time": "8:00AM",
+    "data": [{
+        "title": "Registration",
+        "duration": "1 Hour",
+        "location": "Auditorium",
+        "type": "other"
+    }]
+}, {
+    "time": "9:00AM",
+    "data": [{
+        "title": "Opening",
+        "duration": "30 Minutes",
+        "location": "Auditorium",
+        "speaker": "JT Liew",
+        "type": "general"
+    }]
+}, {
+    "time": "9:30AM",
+    "data": [{
+        "title": "Keynote",
+        "duration": "45 Minutes",
+        "location": "Auditorium",
+        "speaker": "Naoya Moritani",
+        "type": "talk"
+    }]
+}, {
+    "time": "10:15AM",
+    "data": [{
+        "title": "GCP Next Experience",
+        "duration": "30 Minutes",
+        "location": "Auditorium",
+        "speaker": "Albert Padin",
+        "type": "talk"
+    }]
+}, {
+    "time": "10:45AM",
+    "data": [{
+        "title": "Break",
+        "duration": "30 Minutes",
+        "location": "Auditorium",
+        "type": "other"
+    }]
+}, {
+    "time": "11:15AM",
+    "data": [{
+        "title": "TBA",
+        "duration": "45 Minutes",
+        "location": "Auditorium",
+        "speaker": "Ian Lewis",
+        "type": "talk"
+    }]
+}, {
+    "time": "12:00PM",
+    "data": [{
+        "title": "Lunch",
+        "duration": "1 Hour",
+        "location": "location",
+        "type": "other"
+    }]
+}, {
+    "time": "1:00PM",
+    "data": [{
+        "title": "Cloud vision",
+        "duration": "1 Hour 30 Minutes",
+        "location": "Auditorium",
+        "speaker": "Albert Patin",
+        "type": "codelabs",
+        "info": "Codelabs"
+    }, {
+        "title": "Android Cloud Testing",
+        "duration": "1 Hour 30 Minutes",
+        "location": "Lab",
+        "speaker": "JT Liew",
+        "type": "codelabs",
+        "info": "Codelabs"
+    }]
+}, {
+    "time": "3:00PM",
+    "data": [{
+        "title": "Firebase",
+        "duration": "1 Hour 30 Minutes",
+        "location": "Auditorium",
+        "speaker": "Henry Lim",
+        "type": "codelabs",
+        "info": "Codelabs"
+    }, {
+        "title": "Docker & Kubernetes",
+        "duration": "1 Hour 30 Minutes",
+        "location": "Lab",
+        "speaker": "Kenny Lim",
+        "type": "codelabs",
+        "info": "Codelabs"
+    }]
+},{
+    "time": "4:30PM",
+    "data": [{
+        "title": "Closing",
+        "duration": "30 Minutes",
+        "location": "Auditorium",
+        "type": "general"
+    }]
+}]

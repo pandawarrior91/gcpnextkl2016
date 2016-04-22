@@ -24,10 +24,7 @@
         }
 
         app-header {
-            background-color: white;
-            --app-header-background-rear-layer: {
-                background-color: #FAFAFA;
-            }
+            background-color: #FAFAFA;
         }
 
         .gcp-logo {
@@ -88,9 +85,10 @@
                     </paper-toolbar>
                     <iron-selector attr-for-selected="id" selected="{{data.page}}">
                         <paper-item id="" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.home}}</paper-item>
+                        <paper-item id="agenda" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.agenda}}</paper-item>
                         <paper-item id="speaker" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.speakers}}</paper-item>
                         <paper-item id="getting" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.getting}}</paper-item>
-                        <paper-item id="register" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.register}}</paper-item>
+                        <!-- <paper-item id="register" drawer-toggle on-tap="scrollTop">{{pagecontents.movil-menu.register}}</paper-item> -->
                     </iron-selector>
                 </app-drawer>
             </template>
@@ -109,11 +107,10 @@
                             </div>
                             <div title></div>
                             <paper-tabs attr-for-selected="id" selected="{{data.page}}">
-                                <!-- <paper-tab id="" on-tap="scrollTop">{{pagecontents.menu.home}}</paper-tab> -->
                                 <paper-tab id="speaker" on-tap="scrollTop">{{pagecontents.menu.speakers}}</paper-tab>
-                                <!-- <paper-tab id="agenda" on-tap="scrollTop">{{pagecontents.menu.agenda}}</paper-tab> -->
+                                <paper-tab id="agenda" on-tap="scrollTop">{{pagecontents.menu.agenda}}</paper-tab>
                                 <paper-tab id="getting" on-tap="scrollTop">{{pagecontents.menu.getting}}</paper-tab>
-                                <paper-tab id="register" on-tap="scrollTop">{{pagecontents.menu.register}}</paper-tab>
+                                <!-- <paper-tab id="register" on-tap="scrollTop">{{pagecontents.menu.register}}</paper-tab> -->
                             </paper-tabs>
                         </template>
                     </app-toolbar>
@@ -124,9 +121,9 @@
                     <neon-animated-pages id="neonAnimatedPages" class="flex" attr-for-selected="id" selected="{{data.page}}">
                         <home-page id="" page-content="{{pagecontents.details}}"></home-page>
                         <speaker-page page-content="{{pagecontents.speaker}}" id="speaker"></speaker-page>
-                        <!-- <agenda-page id="agenda" page-content="{{pagecontents.agenda}}"></agenda-page> -->
+                        <agenda-page id="agenda" page-content="{{pagecontents.agenda}}"></agenda-page>
                         <transport-page id="getting" page-content="{{pagecontents.getting}}"></transport-page>
-                        <register-page id="register" page-content="{{pagecontents.register}}"></register-page>
+                        <!-- <register-page id="register" page-content="{{pagecontents.register}}"></register-page> -->
                     </neon-animated-pages>
                 </div>
             </app-header-layout>

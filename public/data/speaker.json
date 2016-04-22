@@ -1,4 +1,14 @@
 [{
+    "name": "Naoya Moritani",
+    "post": "Sales Engineer, Google Cloud Platform at Google",
+    "image": "/data/images/speaker/naoya_moritani.png",
+    "desc": "TBA"
+}, {
+    "name": "Ian Lewis",
+    "post": "Developer Advocate at Google",
+    "image": "/data/images/speaker/ian_lewis.jpg",
+    "desc": "TBA"
+}, {
     "name": "Jose Albert Padin",
     "post": "Google Developer Expert",
     "image": "/data/images/speaker/jose_albert_padin.jpg",
@@ -7,35 +17,15 @@
     "name": "Kenny Lim",
     "post": "Docker User Group Manager/Organizer",
     "image": "/data/images/speaker/kenny_lim.jpg",
-    "desc": "To Be Announced"
+    "desc": "TBA"
 }, {
-    "name": "To Be Announced",
-    "post": "To Be Announced",
-    "image": "/data/images/speaker/profile.jpg",
-    "desc": "To Be Announced"
+    "name": "JT Liew",
+    "post": "Fullstack Developer",
+    "image": "/data/images/speaker/jt.jpg",
+    "desc": "JT Liew is a fullstack developer in TABLEAPP and manager in Google Developer Group Kuala Lumpur. Besides Android Development, he do web development, database design in my company."
 }, {
-    "name": "To Be Announced",
-    "post": "To Be Announced",
-    "image": "/data/images/speaker/profile.jpg",
-    "desc": "To Be Announced"
-}, {
-    "name": "To Be Announced",
-    "post": "To Be Announced",
-    "image": "/data/images/speaker/profile.jpg",
-    "desc": "To Be Announced"
-}, {
-    "name": "To Be Announced",
-    "post": "To Be Announced",
-    "image": "/data/images/speaker/profile.jpg",
-    "desc": "To Be Announced"
-}, {
-    "name": "To Be Announced",
-    "post": "To Be Announced",
-    "image": "/data/images/speaker/profile.jpg",
-    "desc": "To Be Announced"
-}, {
-    "name": "To Be Announced",
-    "post": "To Be Announced",
-    "image": "/data/images/speaker/profile.jpg",
-    "desc": "To Be Announced"
+    "name": "Henry Lim",
+    "post": "Web Developer",
+    "image": "/data/images/speaker/henry.jpg",
+    "desc": "Henry Lim is a web developer. He is passionate about Polymer and Firebase. He is currently a committee in GDG Kuala Lumpur and a student at Multimedia University."
 }]

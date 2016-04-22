@@ -4,9 +4,9 @@
         :host {
             display: block;
         }
-
+        
         #agenda {
-            max-width: 1600px;
+            max-width: 1400px;
             width: 80%;
             display: block;
             padding-left: 48px;
@@ -17,62 +17,92 @@
             color: var(--custom-primary-color);
             font-weight: 400;
         }
-
+        
         #container {
-            max-width: 1600px;
+            max-width: 1400px;
             display: block;
             margin: 0 auto;
-            width: 80%;
+            width: 75%;
         }
-
+        
         paper-card {
             width: 100%;
-            background: #FAFAFA;
+            background: white;
             padding: 12px 28px;
             margin-bottom: 32px;
+            margin: 8px;
+        }
+        
+        .general {
+            border-top: 3px solid #2196f3;
+        }
+        
+        .talk {
             border-top: 3px solid #5C6BC0;
         }
-
-        paper-card:hover {
-            @apply(--shadow-elevation-4dp);
+        
+        .other {
+            border-top: 3px solid #bdbdbd;
         }
-
+        
+        .codelabs {
+            border-top: 3px solid #e91e63;
+        }
+        
         #event_time {
             color: rgba(0, 0, 0, 0.5);
-            margin-bottom: 12px;
-            margin-left: 4px;
+            margin: 24px 4px 12px 4px;
             vertical-align: middle;
         }
-
+        
         #event_title {
             color: rgba(0, 0, 0, 0.7);
             font-size: 22px;
             font-weight: 400;
+            margin-bottom: 0;
         }
-
+        
+        #event_speaker {
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0.8em auto 1.2em auto;
+        }
+        
         #event_desc_block iron-icon {
             color: rgba(0, 0, 0, 0.5);
             margin-right: 2px;
         }
-
+        
         #event_desc_block {
             display: inline-block;
-            margin-right: 4px;
+            margin-right: 12px;
             color: rgba(0, 0, 0, 0.7);
             font-size: 14px;
             font-weight: 300;
         }
-
+        
         #toChange {
             padding-top: 12px;
             font-size: 14px;
             font-weight: 400;
             color: rgba(0, 0, 0, 0.7);
         }
-
+        
+        #event_group {
+            display: flex;
+        }
+        
         @media screen and (max-width: 840px) {
+            .general,
+            .talk,
+            .other,
+            .codelabs {
+                border-top: 0;
+            }
+            #event_group {
+                display: block;
+            }
             paper-card {
-                border-top: 0 solid;
+                margin: 0;
             }
             #event_time {
                 margin-left: 12px;
@@ -98,24 +128,36 @@
         <div id="agendaCard">
             <h1 id="agenda">{{pageContent.title}}</h1>
             <div id="container">
-                <template is="dom-repeat" as="item" items='[[agendaData]]'>
+                <template is="dom-repeat" items="[[agendaData]]">
                     <div id="event_time">
                         <iron-icon icon="device:access-time"></iron-icon>
-                        [[item.start]]
+                        [[item.time]]
                     </div>
-                    <paper-card animated-shadow>
-                        <p id="event_title">[[item.name]]</p>
-                        <p id="event_desc">
-                            <div id="event_desc_block">
-                                <iron-icon icon="icons:history"></iron-icon>[[item.end]]
-                            </div>
-                            <div id="event_desc_block">
-                                <iron-icon icon="maps:place"></iron-icon>[[item.place]]
-                            </div>
-                        </p>
-                    </paper-card>
+                    <div id="event_group">
+                        <template is="dom-repeat" items="[[item.data]]">
+                            <paper-card animated-shadow class$="[[item.type]]">
+                                <p id="event_title">[[item.title]]</p>
+                                <template is="dom-if" if="{{item.speaker}}">
+                                    <p id="event_speaker">[[item.speaker]]</p>
+                                </template>
+                                <p id="event_desc">
+                                    <div id="event_desc_block">
+                                        <iron-icon icon="icons:history"></iron-icon>[[item.duration]]
+                                    </div>
+                                    <div id="event_desc_block">
+                                        <iron-icon icon="maps:place"></iron-icon>[[item.location]]
+                                    </div>
+                                    <template is="dom-if" if="{{item.info}}">
+                                        <div id="event_desc_block">
+                                            <iron-icon icon="info"></iron-icon>[[item.info]]
+                                        </div>
+                                    </template>                                    
+                                </p>
+                            </paper-card>
+                        </template>
+                    </div>
                 </template>
-                <p id="toChange">{{pageContent.tochange}}</p>
+                <!-- <p id="toChange">{{pageContent.tochange}}</p> -->
             </div>
             <footer-page></footer-page>
         </div>
@@ -123,17 +165,17 @@
     <script>
     Polymer({
         is: 'agenda-page',
-        pageContent:Object,
+        pageContent: Object,
         behaviors: [
             Polymer.NeonAnimatableBehavior,
             Polymer.NeonAnimationRunnerBehavior
         ],
 
         properties: {
-          agendaData: {
-              type: Object,
-              notify: true
-          },
+            agendaData: {
+                type: Object,
+                notify: true
+            },
             animationConfig: {
                 value: function() {
                     return {

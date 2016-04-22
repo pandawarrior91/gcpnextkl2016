@@ -65,8 +65,8 @@
         }
 
         #get-ticket paper-button {
-            background: var(--custom-secondary-color);
-            color: var(--custom-invert-text-color);
+            background: #949494;
+            color: white;
             margin-bottom: 16px;
         }
 
@@ -184,16 +184,14 @@
                 <google-map-marker latitude="{{pageContent.venue_pointer_latitude}}" longitude="{{pageContent.venue_pointer_longitude}}">
                 </google-map-marker>
             </google-map>
-            <paper-card animated-shadow class="bluegrey shadowElevation">
+<!--             <paper-card animated-shadow class="bluegrey shadowElevation">
                 <div class="card-content">
                     <div id="get-ticket">
                         <p>{{pageContent.get-ticket}}</p>
-                        <a href="{{pageContent.peatix_event_url}}" target="_blank">
-                            <paper-button raised>{{pageContent.button-get-ticket}}</paper-button>
-                        </a>
+                            <paper-button raised disabled>Sold Out</paper-button>
                     </div>
                 </div>
-            </paper-card>
+            </paper-card> -->
             <div id="sponsor-div">
                 <p>{{pageContent.organized-by}}</p>
                 <img src="{{pageContent.sponsor}}" id="main-sponsor">

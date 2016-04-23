@@ -1,13 +1,13 @@
 [{
     "name": "Naoya Moritani",
-    "post": "Sales Engineer, Google Cloud Platform at Google",
+    "post": "Solution Engineer, Google Cloud Platform at Google",
     "image": "/data/images/speaker/naoya_moritani.jpg",
     "desc": "TBA"
 }, {
     "name": "Ian Lewis",
     "post": "Developer Advocate at Google",
     "image": "/data/images/speaker/ian_lewis.jpg",
-    "desc": "TBA"
+    "desc": "Ian Lewis is a software developer that specialized in open source and web application software development. He is experienced in user experience design, medium to large scale web development, real-time web applications, machine learning, and project management and community building. Mr. Ian is also very active in local programming communities and he is one of the Official Google App Engine API Expert in Japan, a distinction given to only 4 App Engine developers in Japan."
 }, {
     "name": "Jose Albert Padin",
     "post": "Google Developer Expert",
